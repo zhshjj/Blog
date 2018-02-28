@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+
+{% block content%}
+{% for content in contents %}
+<div class="listBox ">
+	<h1 class="text-center">{{content.title}}</h1>
+	<p class="colDefault text-center">
+		作者：<span class="colInfo">{{content.user.username}}</span>
+		时间：<span class="colInfo">{{content.addTime|date('Y-m-d H:i:s', -8*60)}}</span>
+		阅读量：<span class="colInfo">{{content.views}}</span>
+		评论量：<span class="colInfo messageCount">{{content.comments.length}}</span>
+	</p>
+	<dfn><p>{{content.description}}</p></dfn>
+	<div class="function">
+		<a href="/view/?contentId={{content.id}}">
+			<button type="btn" class="btn btn-primary">阅读全文</button>
+		</a>
+	</div>
+</div>
+{% endfor %}
+<!-- 上一页下一页 -->
+<nav aria-label="...">
+    <ul class="pager">
+	  	<li class="previous fl">
+	  		{% if page <= 1 %}
+			<span>没有上一页了</span>
+	  		{% else %}
+			<a href="?category={{category}}&page={{page-1}}">上一页</a>
+	  		{% endif %}
+	  	</li>
+		{% if pageCount >= 1 %}
+		<li>					  		
+			<strong>{{page}}/{{pageCount}}</strong>
+		</li>
+		{% else %}
+		<li>					  		
+			<strong>此页没有内容</strong>	
+		</li>					  								  	
+		{% endif %}
+		<li class="next fr">
+			{% if page >= pageCount %}
+			<span>没有下一页了</span>
+			{% else %}
+			<a href="?category={{category}}&page={{page+1}}">下一页</a>
+			{% endif %}
+		</li>
+	</ul>
+</nav>
+{% endblock %}

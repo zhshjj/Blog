@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block main %}
+<div class="jumbotron">
+	<ol class="breadcrumb">
+	  <li><span>成功提示</span></li>
+	</ol>
+</div>
+
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">成功提示</h3>
+	</div>
+	<div class="panel-body">{{message}}</div>
+	<div class="panel-footer">
+		<a href="{{url}}">跳转到指定页面</a>		
+	</div>
+</div>
+
+{% endblock %}
