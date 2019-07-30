@@ -1,0 +1,28 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "nodejs+express+mongodb个人博客",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cookies": "^0.7.1",
+    "markdown": "^0.5.0",
+    "mongoose": "^4.12.4",
+    "express": "^4.16.2",
+    "swig": "^1.4.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shuaijiezhao/Blog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shuaijiezhao/Blog/issues"
+  },
+  "homepage": "https://github.com/shuaijiezhao/Blog#readme"
+}
